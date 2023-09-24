@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+:root {
+    --corLetra: rgb(5, 70, 95);
+    --cor1: rgb(210, 240, 240);
+    --cor2: rgb(25, 155, 155);
+    --cor3: rgb(0, 140, 140);
+    --cor4: rgb(160, 225, 225);
+
+    --ionicon-image: url(../images/sunny.svg);
+}
+
+.light {
+    --corLetra: rgb(70, 70, 140);
+    --cor1: rgb(175, 175, 250);
+    --cor2: rgb(95, 50, 155);
+    --cor3: rgb(100, 15, 200);
+    --cor4: rgb(150, 150, 250);
+
+    --ionicon-image: url(../images/moon.svg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#container {
+    width: 100vw;
+    max-width: 550px;
+    margin: auto;
+    padding: 0;
+}
+
+/* Perfil */
+#profile {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#profile img {
+    width: 150px;
+    overflow: hidden;
+    
+    border: 3px solid var(--cor3);
+    border-radius: 50%;
+}
+
+#profile p {
+    color: var(--corLetra);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+    font-size: larger;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+/* Switch */
+#switch {
+    position: relative;
+    width: 60px;
+
+    margin: 5px auto;
+}
+
+#switch button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: center;
+    cursor: pointer;
+
+    background-color: var(--cor1);
+    background-size: 20px;
+    background-image: var(--ionicon-image);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 2px solid var(--cor1);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    transition: ease-in .25s;
+    animation: switch-slide-dark 0.33s forwards;
+}
+
+.light #switch button {
+    background-image: var(--ionicon-image);
+
+    animation: switch-slide-light 0.33s forwards;
+}
+
+#switch button:hover {
+    border: 2px inset var(--cor2);
+
+    transition: ease-out .25s;
+}
+
+#switch button ion-icon {
+
+}
+
+#switch span {
+    display: block;
+    width: 65px;
+    height: 25px;
+
+    background-color: var(--cor1);
+
+    border: 2px solid var(--cor3);
+    border-radius: 999px;
+}
+
+/* Links */
+ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    color: var(--corLetra);
+    background-color: var(--cor1);
+    border: 2px solid var(--cor2);
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background .5s; 
+}
+
+ul li a:hover {
+    background-color: var(--cor4);
+    border: 2px solid var(--cor3);
+}
+
+/* Social links */
+#social-links {
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    font-size: 30px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    color: var(--cor3);
+    background-color: var(--cor1);
+    border: 3px solid var(--cor2);
+    border-radius: 50%;
+
+    padding: 10px;
+    margin: 0 5px;
+
+    transition: .33s;
+}
+
+#social-links a:hover {
+    background: var(--cor4);
+    transition: .33s;
+}
+
+/* Rodapé */
+footer {
+    color: var(--cor1);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+
+    padding-top: 5px;
+}
+
+footer ion-icon {
+    color: white;
+    width: 20px;
+}
+
+footer a {
+    color: var(--cor1);
+
+    transition: .33s;
+}
+
+footer a:hover {
+    color: var(--cor4);
+
+    transition: .33s;
+}
+
+/* Animações */
+@keyframes switch-slide-light {
+    from {
+        left: 0;
+    } to {
+        left: 60%;
+    }
+}
+
+@keyframes switch-slide-dark {
+    from {
+        left: 60%;
+    } to {
+        left: 0;
+    }
+}
