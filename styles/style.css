@@ -153,6 +153,10 @@ ul li a:hover {
     border: 2px solid var(--cor3);
 }
 
+ul li a p {
+    font-weight: 600;
+}
+
 /* Social links */
 #social-links {
     display: flex;
@@ -195,12 +199,12 @@ footer {
     padding-top: 5px;
 }
 
-footer ion-icon {
+footer p ion-icon {
     color: white;
     width: 20px;
 }
 
-footer a {
+footer p a {
     color: var(--cor1);
 
     transition: .33s;
