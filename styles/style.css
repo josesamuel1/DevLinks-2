@@ -11,7 +11,7 @@
 }
 
 .light {
-    --corLetra: rgb(70, 70, 140);
+    --corLetra: rgb(50, 50, 145);
     --cor1: rgb(175, 175, 250);
     --cor2: rgb(95, 50, 155);
     --cor3: rgb(100, 15, 200);
@@ -105,10 +105,6 @@ body {
     border: 2px inset var(--cor2);
 
     transition: ease-out .25s;
-}
-
-#switch button ion-icon {
-
 }
 
 #switch span {
